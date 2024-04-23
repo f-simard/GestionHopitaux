@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Hopitaux</title>
+  <link rel="stylesheet" href="css\bootstrap-5.0.0-dist\css\bootstrap.min.css">
+  <script language="javascript">
+    function envoyerFormulaire(leForm){
+     leForm.submit();
+    }
+    function divVisible(leDiv){
+      document.getElementById(leDiv).style.visibility='visible';
+    }
+    function divInvisible(leDiv){
+      document.getElementById(leDiv).style.visibility='hidden';
+    }
+   </script>
+</head>
+<body>
+  <div style="margin-left:40px;">
+  <h2>Gestion des hospitalisations</h2>
+  <button type="button" class="btn btn-primary" onClick="envoyerFormulaire(formListe);">Liste des hospitalisations</button>
+<form name="formListe" action="gestionHospitalisations.php" method="post">
+   <input type="hidden" name="monAction" value="obtenirListe">
+</form>
+<br>
+<button type="button" class="btn btn-primary" onClick="divVisible('divListeEtab');">Liste par établissement</button>
+<br><br>
+<div id="divListeEtab" name="divListeEtab" style="visibility:hidden;position:absolute;top:25%;left:10%;">
+<form name="formListeEtab" action="gestionHospitalisations.php" method="post">
+   Code Établissement : <input type="text" id="codeE" name="codeE">
+   <input type="hidden" name="monAction" value="obtenirListeEtab">
+   <input type="button" value="Envoyer" onClick="envoyerFormulaire(formListeEtab);">
+   <img src="images/fermer.png" onClick="divInvisible('divListeEtab')">
+</form>
+</div>
+</div>
+</body>
+</html>
