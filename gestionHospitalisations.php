@@ -123,6 +123,6 @@
 			}
 			
 			?>
-		<br><br><a href="accueilHopital.html">Retour a la page accueil</a>
+		<br><br><a href="index.html">Retour a la page accueil</a>
 </body>
 </html>
